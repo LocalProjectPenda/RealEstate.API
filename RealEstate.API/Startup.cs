@@ -26,7 +26,7 @@ namespace RealEstate.API
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<RealEstateContext>(option =>
-                option.UseSqlServer(Configuration.GetConnectionString("RealEstateConnectionstring")));
+                option.UseSqlServer(Environment.GetEnvironmentVariable("RealEstateConnectionstring")));
                 services.AddControllers();
             }
             if (_env.IsStaging())
